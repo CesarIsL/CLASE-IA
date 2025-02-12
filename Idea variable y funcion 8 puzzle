@@ -1,0 +1,14 @@
+public class App {
+
+    String estadoinicial = "";  
+    String estadofinal = "";   
+    String estadoactual;
+
+    // Constructor para inicializar el estado actual
+    public App(String estadoinicial) {
+        this.estadoactual = estadoinicial;
+    }
+
+    private List<String> getSuccessors(String estado) {
+        List<String> successors = new ArrayList<>();
+        int emptyPos = estado.indexOf('0');
