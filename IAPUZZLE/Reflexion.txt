@@ -1,0 +1,33 @@
+Anchura
+Solución encontrada en 22 movimientos:
+Iteraciones BFS: 105627
+Tiempo de ejecución: 143 ms
+
+--------------------------------
+Costo uniforme
+Solución encontrada en 22 movimientos:
+Iteraciones Costo Uniforme: 106438
+Tiempo de ejecución: 165 ms
+
+-----------------------------
+Profundidad Iterativa
+Solución encontrada en 22 movimientos:
+Iteraciones DFS con límite 22: 5511
+Tiempo de ejecución: 83 ms
+-----------------------------
+Profundidad con limite
+Solución encontrada en 22 movimientos:
+Iteraciones DFS con límite 22: 5511
+Tiempo de ejecución: 26 ms
+
+
+
+Reflexión:
+
+-La búsqueda en anchura (BFS) encontró la solución en 22 movimientos, lo cual es óptimo, pero su gran desventaja es la cantidad de iteraciones necesarias para lograrlo, alcanzando 105,627 iteraciones y un tiempo de ejecución de 143 ms. Esto se debe a que BFS explora todos los nodos a una misma profundidad antes de avanzar, garantizando la mejor solución, pero a costa de un alto consumo de memoria y procesamiento
+-La búsqueda por costo uniforme (UCS) tuvo un rendimiento similar a BFS, con 106,438 iteraciones y un tiempo de ejecución de 165 ms. Esto se debe a que, en este problema, todos los movimientos tienen el mismo costo, lo que hace que UCS se comporte como BFS sin aportar mejoras. Además, la gestión de la cola de prioridad añade una sobrecarga, haciéndolo incluso más lento.
+-La búsqueda en profundidad iterativa (IDDFS) funciona ejecutando DLS con distintos límites, aumentando la profundidad poco a poco hasta encontrar la solución. Se asegura de encontrar la solución óptima sin necesidad de conocer el límite exacto de antemano. Es más lento que DLS con límite (26 ms vs. 83 ms) porque repite búsquedas en niveles inferiores cada vez que aumenta el límite.
+-La búsqueda en profundidad con límite (DLS) encontró la misma solución en 22 movimientos, pero con solo 5,511 iteraciones y un tiempo de ejecución de 26 ms. Esto representa una mejora enorme en eficiencia, ya que al limitar la profundidad a 22 evita explorar ramas innecesarias. Su principal ventaja es que reduce drásticamente el número de iteraciones y el tiempo de procesamiento, siendo el algoritmo más rápido en este caso.
+
+Si no conocemos el límite exacto, IDDFS es la mejor opción, ya que mantiene la eficiencia de DLS con límite y encuentra la solución óptima sin desperdiciar tantos recursos como BFS/UCS.
+
